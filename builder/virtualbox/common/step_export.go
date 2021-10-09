@@ -29,7 +29,7 @@ type StepExport struct {
 func (s *StepExport) Run(ctx context.Context, state multistep.StateBag) multistep.StepAction {
 	// If ISO export is configured, ensure this option is propagated to VBoxManage.
 	for _, option := range s.ExportOpts {
-		if option == "--iso" || option == "-I" {
+		if option == "-I" {
 			s.ExportOpts = append(s.ExportOpts, "--iso")
 			break
 		}
